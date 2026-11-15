@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import logoUrl from "@/assets/logo.svg";
 import type { Group, HistoryEntry, JobInfo, Label, ToastItem, ToastKind } from "@/lib/types";
 import { PARTNERS, UNKNOWN_ID, getPartner } from "@/lib/partners";
 import { runBatch, type BatchCallbacks } from "@/lib/processing";
@@ -22,7 +23,6 @@ import { ConfirmModal, Reveal, useCountUp } from "@/components/bits";
 import {
   IconAlert,
   IconArchive,
-  IconBarcode,
   IconBox,
   IconChevronDown,
   IconPrinter,
@@ -419,9 +419,13 @@ export default function App() {
       {/* header */}
       <header className="sticky top-1.5 z-30 border-b-2 border-ink bg-paper/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 sm:px-6">
-          <button className="flex items-center gap-2.5" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-ink text-amber shadow-[2px_2px_0_rgba(32,28,20,0.3)]">
-              <IconBarcode className="text-lg" />
+          <button
+            className="flex items-center gap-2.5"
+            aria-label="LabelSort — back to top"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-md border-2 border-ink bg-card shadow-[2px_2px_0_rgba(32,28,20,0.3)]">
+              <img src={logoUrl} alt="" width={44} height={44} className="h-full w-full object-contain" draggable={false} />
             </span>
             <span className="text-left">
               <span className="block font-display text-lg font-extrabold leading-none tracking-tight">LabelSort</span>
@@ -726,8 +730,8 @@ export default function App() {
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <span className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-md bg-amber text-ink">
-                <IconBarcode className="text-lg" />
+              <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-md border-2 border-paper/25 bg-paper">
+                <img src={logoUrl} alt="" width={40} height={40} className="h-full w-full object-contain" draggable={false} />
               </span>
               <span className="font-display text-lg font-extrabold tracking-tight">LabelSort</span>
             </span>

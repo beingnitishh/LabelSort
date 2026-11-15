@@ -1,4 +1,5 @@
 import { useRef, useState, type DragEvent } from "react";
+import logoUrl from "@/assets/logo.svg";
 import { cn } from "@/utils/cn";
 import { IconSpinner, IconUpload } from "./icons";
 
@@ -92,14 +93,26 @@ export function UploadZone({
         </div>
       ) : (
         <div className="mx-auto max-w-md">
-          <span
-            className={cn(
-              "mx-auto grid h-16 w-16 place-items-center rounded-lg border-2 border-ink bg-amber text-ink shadow-[4px_4px_0_rgba(32,28,20,0.9)] transition-transform duration-200",
-              hovering ? "-translate-y-1 rotate-3" : "group-hover:-translate-y-1"
-            )}
-          >
-            <IconUpload className="text-2xl" />
-          </span>
+          <div className="relative mx-auto flex w-fit">
+            <span
+              className={cn(
+                "grid h-20 w-20 place-items-center overflow-hidden rounded-lg border-2 border-ink bg-paper shadow-[4px_4px_0_rgba(32,28,20,0.9)] transition-transform duration-200",
+                hovering ? "-translate-y-1 rotate-3" : "group-hover:-translate-y-1"
+              )}
+            >
+              <img
+                src={logoUrl}
+                alt=""
+                width={80}
+                height={80}
+                className="h-full w-full object-contain p-1"
+                draggable={false}
+              />
+            </span>
+            <span className="absolute -bottom-1.5 -right-1.5 grid h-7 w-7 place-items-center rounded-full border-2 border-ink bg-amber text-ink shadow-[1px_1px_0_rgba(32,28,20,0.5)]">
+              <IconUpload className="text-sm" />
+            </span>
+          </div>
           <p className="mt-5 font-display text-2xl font-bold leading-snug sm:text-[1.7rem]">
             {hovering ? "Let go — we'll take it from here" : "Drop your label PDFs here"}
           </p>
