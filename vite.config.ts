@@ -11,6 +11,9 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), viteSingleFile()],
+  // dev/preview servers are proxied through hosting sandboxes and preview URLs
+  server: { host: true, allowedHosts: true },
+  preview: { host: true, allowedHosts: true },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
