@@ -758,6 +758,20 @@ export default function App() {
         <div className="border-t border-paper/15">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-4 font-mono text-[11px] text-paper/50 sm:px-6">
             <span>LabelSort · sorting desk for Indian e-commerce</span>
+            <span>
+              <a
+                href="https://beingnitish.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 transition-colors hover:text-amber focus-visible:text-amber focus-visible:outline-none"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-amber" aria-hidden />
+                Created by{" "}
+                <span className="font-semibold text-paper/80 underline decoration-amber/50 decoration-2 underline-offset-2 transition-colors group-hover:text-amber group-hover:decoration-amber">
+                  Nitish Kumar
+                </span>
+              </a>
+            </span>
             <span>AWB numbers stay yours</span>
           </div>
         </div>
